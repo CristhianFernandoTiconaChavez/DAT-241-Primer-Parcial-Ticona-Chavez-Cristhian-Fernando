@@ -1,1 +1,0 @@
-# DAT-241-Primer-Parcial-Ticona-Chavez-Cristhian-Fernando
