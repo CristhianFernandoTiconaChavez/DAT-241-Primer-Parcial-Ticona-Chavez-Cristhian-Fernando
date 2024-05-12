@@ -1,0 +1,44 @@
+
+	La taxonomía de Flynn divide los sistemas informáticos en cuatro categorías según la cantidad de instrucciones y datos que pueden procesar simultáneamente.
+
+ 		1. SISD (Single Instruction, Single Data):
+ 			Un único flujo de instrucciones opera en un único flujo de datos.
+ 			Este es un modelo  de computación secuencial tradicional.
+
+ 		2. SIMD (Single Instruction, Multiple Data):
+ 			Procesa múltiples datos simultáneamente con una instrucción.
+ 			Este modelo es común en arquitecturas de procesamiento paralelo como GPU y algunos procesadores vectoriales.
+
+ 		3. MISD (Multiple Instruction, Single Data):
+ 			Múltiples flujos de instrucciones operan en un solo flujo de datos.
+ 			Aunque conceptualmente es posible, en la práctica esto es poco común.
+
+ 		4. MIMD (Multiple Instruction, Multple Data):
+ 			Múltiples flujos de instrucciones operan en múltiples flujos de datos simultáneamente.
+ 			Este modelo es típico de los sistemas informáticos distribuidos en paralelo.
+
+ 		¿Cómo se clasifican OPENMP, MPI y multiprocesamiento según esta taxonomía?
+
+ 		1. OPENMP: 
+ 		 - Clasificación: SISD.
+ 		 - Justificación: 
+ 		 	OPENMP es una API de programación para crear aplicaciones paralelas en sistemas de memoria compartida.
+ 			Esto permite a los desarrolladores especificar secciones de código que se pueden ejecutar en paralelo mediante subprocesos.
+ 			Sin embargo, cada subproceso ejecuta solo una instrucción (la misma instrucción) en un momento dado y los datos procesados se comparten entre subprocesos.
+
+ 		2. MPI (Message Passing Interface): 
+ 		 - Clasificación: MIMD.
+ 		 - Justificación: 
+ 		 	MPI es una interfaz estándar para programar sistemas informáticos distribuidos en paralelo.
+ 			Esto permite la comunicación entre diferentes procesos que se ejecutan en diferentes nodos de un sistema distribuido.
+ 			Cada proceso ejecuta su propio conjunto de instrucciones y procesa sus propios datos y puede clasificarse como MIMD.
+
+ 		3. Multiprocessing (para Python): 
+ 		 - Clasificación: MIMD.
+ 		 - Justificación: 
+ 		 	El multiprocesamiento en Python permite que se ejecuten múltiples procesos simultáneamente usando múltiples núcleos de CPU.
+ 			Cada proceso ejecuta su propio conjunto de instrucciones y procesa sus propios datos y puede clasificarse como MIMD.
+ 			
+ 		En resumen, OPENMP se clasifica como SISD porque ejecuta un comando en múltiples datos.
+ 		MPI y multiprocesamiento se clasifican como MIMD porque permiten ejecutar múltiples instrucciones en múltiples datos simultáneamente.
+
